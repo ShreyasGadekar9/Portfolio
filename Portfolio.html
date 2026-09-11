@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shreyas Gadekar | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      --bg-color: #0d1117;
+      --card-bg: rgba(22, 27, 34, 0.75);
+      --card-border: rgba(240, 246, 252, 0.1);
+      --card-hover: rgba(33, 38, 45, 0.9);
+      --text-primary: #f0f6fc;
+      --text-secondary: #8b949e;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.2);
+      --gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .bg-glow {
+      position: fixed;
+      top: -150px;
+      right: -150px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      filter: blur(80px);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: rgba(13, 17, 23, 0.75);
+      border-bottom: 1px solid var(--card-border);
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 1.5rem;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 40px;
+      height: 3px;
+      background: var(--gradient);
+      border-radius: 2px;
+    }
+
+    .hero {
+      padding: 7rem 0 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 50px;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 10px #22c55e;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      letter-spacing: -1px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-bio {
+      max-width: 650px;
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.8rem 1.6rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      background: var(--gradient);
+      color: #0d1117;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--card-border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      background: rgba(255, 255, 255, 0.03);
+      transform: translateY(-2px);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card:hover {
+      background: var(--card-hover);
+      border-color: rgba(56, 189, 248, 0.4);
+      transform: translateY(-4px);
+    }
+
+    .card-header {
+      margin-bottom: 1rem;
+    }
+
+    .card-header h3 {
+      font-size: 1.35rem;
+      color: var(--text-primary);
+      margin-bottom: 0.35rem;
+    }
+
+    .card-header span {
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .card ul {
+      list-style-type: none;
+      margin: 1rem 0 1.5rem;
+    }
+
+    .card ul li {
+      position: relative;
+      padding-left: 1.4rem;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.6rem;
+    }
+
+    .card ul li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: auto;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.3rem 0.65rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      color: #94a3b8;
+    }
+
+    .timeline {
+      border-left: 2px solid var(--card-border);
+      padding-left: 2rem;
+      margin-left: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .timeline-item {
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.35rem;
+      top: 0.4rem;
+      width: 10px;
+      height: 10px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--accent-glow);
+    }
+
+    .timeline-role {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .timeline-org {
+      font-size: 0.95rem;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-meta {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.8rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-category {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .skill-category h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .badge-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .skill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.8rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      transition: var(--transition);
+    }
+
+    .skill-badge:hover {
+      border-color: var(--accent);
+      color: var(--text-primary);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding: 4rem 0 2rem;
+      text-align: center;
+      background: rgba(13, 17, 23, 0.5);
+    }
+
+    .contact-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-secondary);
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .copy {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.3rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-glow"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">Shreyas<span>.dev</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+      <div class="status-badge">
+        <span class="status-dot"></span> Available for Opportunities
+      </div>
+      <h1>Hi, I'm Shreyas Gadekar</h1>
+      <p class="hero-subtitle">Aspiring Software Professional & Cross-Platform Developer</p>
+      <p class="hero-bio">
+        Based in Nashik, Maharashtra. Passionate about building responsive web and mobile applications with clean architecture and seamless user experiences. Experienced with Flutter, Dart, C++, Java, and modern web technologies.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fa-solid fa-code"></i> View Projects
+        </a>
+        <a href="#contact" class="btn btn-outline">
+          <i class="fa-regular fa-envelope"></i> Get In Touch
+        </a>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2 class="section-title">Technical Expertise</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Languages & Core</h3>
+          <div class="badge-cloud">
+            <span class="skill-badge"><i class="fa-solid fa-code"></i> C++</span>
+            <span class="skill-badge"><i class="fa-brands fa-java"></i> Java</span>
+            <span class="skill-badge"><i class="fa-solid fa-feather-pointed"></i> Dart</span>
+            <span class="skill-badge"><i class="fa-brands fa-html5"></i> HTML</span>
+            <span class="skill-badge"><i class="fa-brands fa-css3-alt"></i> CSS</span>
+            <span class="skill-badge"><i class="fa-brands fa-js"></i> JavaScript</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Development Tools & IDEs</h3>
+          <div class="badge-cloud">
+            <span class="skill-badge"><i class="fa-brands fa-android"></i> Android Studio</span>
+            <span class="skill-badge"><i class="fa-solid fa-laptop-code"></i> VS Code</span>
+            <span class="skill-badge"><i class="fa-solid fa-cube"></i> IntelliJ IDEA</span>
+            <span class="skill-badge"><i class="fa-solid fa-file-code"></i> Sublime Text</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Soft Skills & Competencies</h3>
+          <div class="badge-cloud">
+            <span class="skill-badge"><i class="fa-solid fa-brain"></i> Problem Solving</span>
+            <span class="skill-badge"><i class="fa-solid fa-lightbulb"></i> Logical Thinking</span>
+            <span class="skill-badge"><i class="fa-solid fa-comments"></i> Communication</span>
+            <span class="skill-badge"><i class="fa-solid fa-chart-line"></i> Risk Management</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="grid-2">
+        <!-- Project 1 -->
+        <div class="card">
+          <div class="card-header">
+            <h3>TurfHub</h3>
+            <span>Turf Booking System</span>
+          </div>
+          <ul>
+            <li>Built a Flutter-based mobile application with city selection, slot booking, and real-time turf availability.</li>
+            <li>Engineered an intuitive interface for frictionless navigation and detailed turf information, scalable for reviews and ratings.</li>
+            <li>Automated manual booking procedures, eliminating scheduling overlaps and driving community sports engagement.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Flutter</span>
+            <span class="tag">Dart</span>
+            <span class="tag">UI/UX</span>
+            <span class="tag">Mobile Architecture</span>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Life Patch</h3>
+            <span>AI-Driven Problem Solver</span>
+          </div>
+          <ul>
+            <li>Engineered a Flutter mobile app utilizing Firebase for real-time data persistence and authentication.</li>
+            <li>Integrated Google Gemini API to analyze user problems and generate focused, 4-line actionable solutions.</li>
+            <li>Built a context-aware product recommendation engine tailored directly to the generated solutions.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Flutter</span>
+            <span class="tag">Google Gemini API</span>
+            <span class="tag">Firebase</span>
+            <span class="tag">AI Integration</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+      <h2 class="section-title">Experience & Training</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3 class="timeline-role">Mobile App Intern</h3>
+          <div class="timeline-org">Paarsh Infotech · Nashik, Maharashtra</div>
+          <div class="timeline-meta">January 2026 – February 2026</div>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">
+            Developed cross-platform mobile application modules using Flutter and Dart, with emphasis on responsive layouts, state handling, and modular component testing.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <h3 class="timeline-role">Web Development Trainee</h3>
+          <div class="timeline-org">Softcrowd Technologies · Nashik, Maharashtra</div>
+          <div class="timeline-meta">July 2023 – August 2023</div>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">
+            Structured responsive web pages using HTML, CSS, and JavaScript. Conducted technical assessments and pre-project analyses that drove key UI improvements, lifting user engagement by 25% and customer satisfaction to 4.5/5.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3 class="timeline-role">B.E. in Computer Science</h3>
+          <div class="timeline-org">Savitribai Phule Pune University</div>
+          <div class="timeline-meta">2024 – 2027 (Pursuing)</div>
+        </div>
+
+        <div class="timeline-item">
+          <h3 class="timeline-role">Diploma in Computer Engineering</h3>
+          <div class="timeline-org">Maharashtra State Board of Technical Education</div>
+          <div class="timeline-meta">2021 – 2024 · Grade: 87.66%</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer / Contact -->
+  <footer id="contact">
+    <div class="container contact-container">
+      <h2 style="font-size: 2rem; font-weight: 700;">Let's Connect</h2>
+      <p style="color: var(--text-secondary); max-width: 500px;">
+        Feel free to reach out for collaborations, software engineering roles, or project inquiries.
+      </p>
+      
+      <div class="social-links">
+        <a href="mailto:gadekarshreyas99@gmail.com" title="Email" target="_blank">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a href="https://linkedin.com" title="LinkedIn" target="_blank">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com" title="GitHub" target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="tel:+919309141513" title="Phone">
+          <i class="fa-solid fa-phone"></i>
+        </a>
+      </div>
+      
+      <p class="copy">© 2026 Shreyas Gadekar. Built with clean code & modern design.</p>
+    </div>
+  </footer>
+</body>
+</html>
