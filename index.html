@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shreyas Gadekar | Portfolio</title>
+  <title>Shreyas Gadekar | Full-Stack Software Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -297,6 +297,15 @@
       color: #94a3b8;
     }
 
+    .project-link {
+      display: inline-block;
+      margin-top: 1.25rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
     .timeline {
       border-left: 2px solid var(--card-border);
       padding-left: 2rem;
@@ -457,12 +466,12 @@
     <!-- Hero Section -->
     <section class="hero" id="about">
       <div class="status-badge">
-        <span class="status-dot"></span> Available for Opportunities
+        <span class="status-dot"></span> Available Immediately
       </div>
       <h1>Hi, I'm Shreyas Gadekar</h1>
-      <p class="hero-subtitle">Aspiring Software Professional & Cross-Platform Developer</p>
+      <p class="hero-subtitle">Full-Stack Software Developer | Java, Spring Boot, Flutter</p>
       <p class="hero-bio">
-        Based in Nashik, Maharashtra. Passionate about building responsive web and mobile applications with clean architecture and seamless user experiences. Experienced with Flutter, Dart, C++, Java, and modern web technologies.
+        Final-year Computer Science student skilled in Java, Spring Boot, MySQL, and Flutter, seeking a full-stack software development opportunity to contribute to real-world projects and grow as a software developer. Based in Pune, Maharashtra.
       </p>
       <div class="hero-actions">
         <a href="#projects" class="btn btn-primary">
@@ -479,11 +488,22 @@
       <h2 class="section-title">Technical Expertise</h2>
       <div class="skills-grid">
         <div class="skill-category">
-          <h3>Languages & Core</h3>
+          <h3>Backend</h3>
           <div class="badge-cloud">
-            <span class="skill-badge"><i class="fa-solid fa-code"></i> C++</span>
             <span class="skill-badge"><i class="fa-brands fa-java"></i> Java</span>
+            <span class="skill-badge"><i class="fa-solid fa-leaf"></i> Spring Boot</span>
+            <span class="skill-badge"><i class="fa-solid fa-seedling"></i> Spring Core (IoC, Beans, DI)</span>
+            <span class="skill-badge"><i class="fa-solid fa-database"></i> MySQL</span>
+            <span class="skill-badge"><i class="fa-solid fa-plug"></i> REST APIs</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Frontend & Mobile</h3>
+          <div class="badge-cloud">
+            <span class="skill-badge"><i class="fa-solid fa-mobile-screen"></i> Flutter</span>
             <span class="skill-badge"><i class="fa-solid fa-feather-pointed"></i> Dart</span>
+            <span class="skill-badge"><i class="fa-solid fa-fire"></i> Firebase</span>
             <span class="skill-badge"><i class="fa-brands fa-html5"></i> HTML</span>
             <span class="skill-badge"><i class="fa-brands fa-css3-alt"></i> CSS</span>
             <span class="skill-badge"><i class="fa-brands fa-js"></i> JavaScript</span>
@@ -491,22 +511,25 @@
         </div>
 
         <div class="skill-category">
-          <h3>Development Tools & IDEs</h3>
+          <h3>Tools & AI</h3>
           <div class="badge-cloud">
+            <span class="skill-badge"><i class="fa-brands fa-git-alt"></i> Git</span>
+            <span class="skill-badge"><i class="fa-brands fa-github"></i> GitHub</span>
+            <span class="skill-badge"><i class="fa-solid fa-paper-plane"></i> Postman</span>
+            <span class="skill-badge"><i class="fa-solid fa-table"></i> MySQL Workbench</span>
             <span class="skill-badge"><i class="fa-brands fa-android"></i> Android Studio</span>
-            <span class="skill-badge"><i class="fa-solid fa-laptop-code"></i> VS Code</span>
             <span class="skill-badge"><i class="fa-solid fa-cube"></i> IntelliJ IDEA</span>
-            <span class="skill-badge"><i class="fa-solid fa-file-code"></i> Sublime Text</span>
+            <span class="skill-badge"><i class="fa-solid fa-rocket"></i> Antigravity</span>
+            <span class="skill-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Gemini API</span>
           </div>
         </div>
 
         <div class="skill-category">
-          <h3>Soft Skills & Competencies</h3>
+          <h3>Soft Skills</h3>
           <div class="badge-cloud">
             <span class="skill-badge"><i class="fa-solid fa-brain"></i> Problem Solving</span>
             <span class="skill-badge"><i class="fa-solid fa-lightbulb"></i> Logical Thinking</span>
             <span class="skill-badge"><i class="fa-solid fa-comments"></i> Communication</span>
-            <span class="skill-badge"><i class="fa-solid fa-chart-line"></i> Risk Management</span>
           </div>
         </div>
       </div>
@@ -520,19 +543,22 @@
         <div class="card">
           <div class="card-header">
             <h3>TurfHub</h3>
-            <span>Turf Booking System</span>
+            <span>Full-Stack Turf Booking System</span>
           </div>
           <ul>
-            <li>Built a Flutter-based mobile application with city selection, slot booking, and real-time turf availability.</li>
-            <li>Engineered an intuitive interface for frictionless navigation and detailed turf information, scalable for reviews and ratings.</li>
-            <li>Automated manual booking procedures, eliminating scheduling overlaps and driving community sports engagement.</li>
+            <li>Built a Spring Boot backend with MySQL and 12 REST endpoints for turfs, slots, bookings, and users.</li>
+            <li>Built the Flutter app with city selection, slot booking, and real-time turf availability on top of the APIs.</li>
+            <li>Replaced hard-coded data with live API calls — the app now runs on a real backend.</li>
           </ul>
           <div class="tags">
+            <span class="tag">Spring Boot</span>
+            <span class="tag">Java</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">REST APIs</span>
             <span class="tag">Flutter</span>
             <span class="tag">Dart</span>
-            <span class="tag">UI/UX</span>
-            <span class="tag">Mobile Architecture</span>
           </div>
+          <a href="https://github.com/ShreyasGadekar9/TurfHub-fullstack" class="project-link" target="_blank">View on GitHub</a>
         </div>
 
         <!-- Project 2 -->
@@ -552,6 +578,7 @@
             <span class="tag">Firebase</span>
             <span class="tag">AI Integration</span>
           </div>
+          <a href="https://github.com/ShreyasGadekar9/life-patch" class="project-link" target="_blank">View on GitHub</a>
         </div>
       </div>
     </section>
@@ -561,11 +588,11 @@
       <h2 class="section-title">Experience & Training</h2>
       <div class="timeline">
         <div class="timeline-item">
-          <h3 class="timeline-role">Mobile App Intern</h3>
-          <div class="timeline-org">Paarsh Infotech · Nashik, Maharashtra</div>
+          <h3 class="timeline-role">Flutter Development Intern</h3>
+          <div class="timeline-org">Paarsh Infotect · Nashik, Maharashtra</div>
           <div class="timeline-meta">January 2026 – February 2026</div>
           <p style="color: var(--text-secondary); font-size: 0.95rem;">
-            Developed cross-platform mobile application modules using Flutter and Dart, with emphasis on responsive layouts, state handling, and modular component testing.
+            Developed mobile application features using Flutter and Dart, focusing on responsive UI. Built and tested application modules, gaining hands-on experience in cross-platform app development.
           </p>
         </div>
 
@@ -574,7 +601,7 @@
           <div class="timeline-org">Softcrowd Technologies · Nashik, Maharashtra</div>
           <div class="timeline-meta">July 2023 – August 2023</div>
           <p style="color: var(--text-secondary); font-size: 0.95rem;">
-            Structured responsive web pages using HTML, CSS, and JavaScript. Conducted technical assessments and pre-project analyses that drove key UI improvements, lifting user engagement by 25% and customer satisfaction to 4.5/5.
+            Structured responsive web pages using HTML, CSS, and JavaScript. Conducted pre-project analysis and technical assessments that identified key UI improvements.
           </p>
         </div>
       </div>
@@ -614,7 +641,7 @@
         <a href="https://linkedin.com" title="LinkedIn" target="_blank">
           <i class="fa-brands fa-linkedin-in"></i>
         </a>
-        <a href="https://github.com" title="GitHub" target="_blank">
+        <a href="https://github.com/ShreyasGadekar9" title="GitHub" target="_blank">
           <i class="fa-brands fa-github"></i>
         </a>
         <a href="tel:+919309141513" title="Phone">
